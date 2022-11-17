@@ -8,7 +8,7 @@ local beginSpam = Instance.new("TextButton")
 local UICorner_2 = Instance.new("UICorner")
 
 outfitSpammer.Name = "outfitSpammer"
-outfitSpammer.Parent = game.CoreGui
+outfitSpammer.Parent = game.StarterGui
 outfitSpammer.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 outfitSpammer.DisplayOrder = 999
 
@@ -34,8 +34,7 @@ title.TextColor3 = Color3.fromRGB(255, 255, 255)
 title.TextScaled = true
 title.TextSize = 14.000
 title.TextWrapped = true
-title.FontFace = Enum.Font.Nunito
-title.FontFace.Style = "Bold"
+title.FontFace = Font.fromName("Nunito", Enum.FontWeight.Bold)
 
 inputBox.Name = "inputBox"
 inputBox.Parent = mainFrame
@@ -50,8 +49,7 @@ inputBox.Text = ""
 inputBox.TextColor3 = Color3.fromRGB(255, 255, 255)
 inputBox.TextSize = 20.000
 inputBox.TextXAlignment = Enum.TextXAlignment.Left
-inputBox.FontFace = Enum.Font.Nunito
-inputBox.FontFace.Style = "Bold"
+inputBox.FontFace = Font.fromName("Nunito", Enum.FontWeight.Bold)
 
 subtitle.Name = "subtitle"
 subtitle.Parent = mainFrame
@@ -65,8 +63,7 @@ subtitle.TextColor3 = Color3.fromRGB(255, 255, 255)
 subtitle.TextSize = 22.000
 subtitle.TextWrapped = true
 subtitle.TextXAlignment = Enum.TextXAlignment.Left
-subtitle.FontFace = Enum.Font.Nunito
-subtitle.FontFace.Style = "Bold"
+subtitle.FontFace = Font.fromName("Nunito", Enum.FontWeight.Bold)
 
 beginSpam.Name = "beginSpam"
 beginSpam.Parent = mainFrame
@@ -78,8 +75,7 @@ beginSpam.Text = "Begin Spam"
 beginSpam.TextColor3 = Color3.fromRGB(255, 255, 255)
 beginSpam.TextSize = 30.000
 beginSpam.TextWrapped = true
-beginSpam.FontFace = Enum.Font.Nunito
-beginSpam.FontFace.Style = "Bold"
+beginSpam.FontFace = Font.fromName("Nunito", Enum.FontWeight.Bold)
 
 UICorner_2.CornerRadius = UDim.new(0.159999996, 0)
 UICorner_2.Parent = beginSpam
@@ -89,14 +85,14 @@ local function SGNCA_fake_script()
 
 	local mainFrame = script.Parent.mainFrame
 	local beginSpamButton = mainFrame.beginSpam
-	
+
 	beginSpamButton.MouseButton1Click:Connect(function()
 		local finalID
 		local success, fail = pcall(function()
 			local text = mainFrame.inputBox.Text
 			finalID = game.Players:GetUserIdFromNameAsync(text)
 		end)
-	
+
 		if fail then
 			finalID = mainFrame.inputBox.Text
 			mainFrame.inputBox.Text = "invalid userID / player name"
@@ -105,9 +101,9 @@ local function SGNCA_fake_script()
 			mainFrame.inputBox.TextColor3 = Color3.fromRGB(255, 255, 255)
 			mainFrame.inputBox.Text = ""
 		end
-		
+
 		local count = 0
-		
+
 		while count < 20 do
 			local arg = finalID
 			local Event = game:GetService("ReplicatedStorage")["⠀⠀⠀⠀😃_outfit_⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"]
@@ -115,7 +111,7 @@ local function SGNCA_fake_script()
 			wait(0.1)
 			count += 1
 		end
-		
+
 		game:GetService("TeleportService"):Teleport(4984400432, game.Players.LocalPlayer)
 	end)
 end
