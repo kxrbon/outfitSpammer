@@ -1,6 +1,3 @@
-
-
--- Instances:
 local outfitSpammer = Instance.new("ScreenGui")
 local mainFrame = Instance.new("Frame")
 local UICorner = Instance.new("UICorner")
@@ -10,12 +7,9 @@ local subtitle = Instance.new("TextLabel")
 local beginSpam = Instance.new("TextButton")
 local UICorner_2 = Instance.new("UICorner")
 
---Properties:
-
 outfitSpammer.Name = "outfitSpammer"
-outfitSpammer.Parent = game.CoreGui
+outfitSpammer.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 outfitSpammer.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-outfitSpammer.DisplayOrder = 999
 
 mainFrame.Name = "mainFrame"
 mainFrame.Parent = outfitSpammer
@@ -39,6 +33,8 @@ title.TextColor3 = Color3.fromRGB(255, 255, 255)
 title.TextScaled = true
 title.TextSize = 14.000
 title.TextWrapped = true
+title.FontFace = Enum.Font.Nunito
+title.FontFace.Style = Enum.FontStyle.Bold
 
 inputBox.Name = "inputBox"
 inputBox.Parent = mainFrame
@@ -53,6 +49,8 @@ inputBox.Text = ""
 inputBox.TextColor3 = Color3.fromRGB(255, 255, 255)
 inputBox.TextSize = 20.000
 inputBox.TextXAlignment = Enum.TextXAlignment.Left
+inputBox.FontFace = Enum.Font.Nunito
+inputBox.FontFace.Style = Enum.FontStyle.Bold
 
 subtitle.Name = "subtitle"
 subtitle.Parent = mainFrame
@@ -66,6 +64,8 @@ subtitle.TextColor3 = Color3.fromRGB(255, 255, 255)
 subtitle.TextSize = 22.000
 subtitle.TextWrapped = true
 subtitle.TextXAlignment = Enum.TextXAlignment.Left
+subtitle.FontFace = Enum.Font.Nunito
+subtitle.FontFace.Style = Enum.FontStyle.Bold
 
 beginSpam.Name = "beginSpam"
 beginSpam.Parent = mainFrame
@@ -77,20 +77,19 @@ beginSpam.Text = "Begin Spam"
 beginSpam.TextColor3 = Color3.fromRGB(255, 255, 255)
 beginSpam.TextSize = 30.000
 beginSpam.TextWrapped = true
+beginSpam.FontFace = Enum.Font.Nunito
+beginSpam.FontFace.Style = Enum.FontStyle.Bold
 
 UICorner_2.CornerRadius = UDim.new(0.159999996, 0)
 UICorner_2.Parent = beginSpam
 
--- Scripts:
-syn.queue_on_teleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/kxrbon/outfitSpammer/main/ahh.lua', true))()")
-local function SGNCA_fake_script() -- outfitSpammer.handler 
+local function SGNCA_fake_script()
 	local script = Instance.new('LocalScript', outfitSpammer)
 
 	local mainFrame = script.Parent.mainFrame
 	local beginSpamButton = mainFrame.beginSpam
 	
 	beginSpamButton.MouseButton1Click:Connect(function()
-		beginSpamButton.Text = "Teleporting In 10 Seconds"
 		local finalID
 		local success, fail = pcall(function()
 			local text = mainFrame.inputBox.Text
@@ -115,7 +114,7 @@ local function SGNCA_fake_script() -- outfitSpammer.handler
 			wait(0.1)
 			count += 1
 		end
-		
+		wait(10)
 		game:GetService("TeleportService"):Teleport(4984400432, game.Players.LocalPlayer)
 	end)
 end
