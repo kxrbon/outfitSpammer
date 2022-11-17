@@ -82,7 +82,7 @@ UICorner_2.CornerRadius = UDim.new(0.159999996, 0)
 UICorner_2.Parent = beginSpam
 
 -- Scripts:
-syn.queue_on_teleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/kxrbon/outfitSpammer/main/loader.lua', true))()")
+syn.queue_on_teleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/kxrbon/outfitSpammer/main/ahh.lua', true))()")
 local function SGNCA_fake_script() -- outfitSpammer.handler 
 	local script = Instance.new('LocalScript', outfitSpammer)
 
