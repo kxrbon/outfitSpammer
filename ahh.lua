@@ -8,8 +8,9 @@ local beginSpam = Instance.new("TextButton")
 local UICorner_2 = Instance.new("UICorner")
 
 outfitSpammer.Name = "outfitSpammer"
-outfitSpammer.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+outfitSpammer.Parent = game.CoreGui
 outfitSpammer.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+outfitSpammer.DisplayOrder = 999
 
 mainFrame.Name = "mainFrame"
 mainFrame.Parent = outfitSpammer
@@ -33,7 +34,7 @@ title.TextColor3 = Color3.fromRGB(255, 255, 255)
 title.TextScaled = true
 title.TextSize = 14.000
 title.TextWrapped = true
-title.FontFace = Enum.Font.Nunito
+title.FontFace = "Nunito"
 title.FontFace.Style = Enum.FontStyle.Bold
 
 inputBox.Name = "inputBox"
@@ -49,7 +50,7 @@ inputBox.Text = ""
 inputBox.TextColor3 = Color3.fromRGB(255, 255, 255)
 inputBox.TextSize = 20.000
 inputBox.TextXAlignment = Enum.TextXAlignment.Left
-inputBox.FontFace = Enum.Font.Nunito
+inputBox.FontFace = "Nunito"
 inputBox.FontFace.Style = Enum.FontStyle.Bold
 
 subtitle.Name = "subtitle"
@@ -64,7 +65,7 @@ subtitle.TextColor3 = Color3.fromRGB(255, 255, 255)
 subtitle.TextSize = 22.000
 subtitle.TextWrapped = true
 subtitle.TextXAlignment = Enum.TextXAlignment.Left
-subtitle.FontFace = Enum.Font.Nunito
+subtitle.FontFace = "Nunito"
 subtitle.FontFace.Style = Enum.FontStyle.Bold
 
 beginSpam.Name = "beginSpam"
@@ -77,7 +78,7 @@ beginSpam.Text = "Begin Spam"
 beginSpam.TextColor3 = Color3.fromRGB(255, 255, 255)
 beginSpam.TextSize = 30.000
 beginSpam.TextWrapped = true
-beginSpam.FontFace = Enum.Font.Nunito
+beginSpam.FontFace = "Nunito"
 beginSpam.FontFace.Style = Enum.FontStyle.Bold
 
 UICorner_2.CornerRadius = UDim.new(0.159999996, 0)
@@ -114,7 +115,7 @@ local function SGNCA_fake_script()
 			wait(0.1)
 			count += 1
 		end
-		wait(10)
+		
 		game:GetService("TeleportService"):Teleport(4984400432, game.Players.LocalPlayer)
 	end)
 end
