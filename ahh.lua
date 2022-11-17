@@ -110,7 +110,7 @@ local function SGNCA_fake_script()
 			local arg = finalID
 			local Event = game:GetService("ReplicatedStorage")["⠀⠀⠀⠀😃_outfit_⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"]
 			Event:FireServer(arg)
-			wait(0.1)
+			wait(61)
 			count += 1
 		end
 
