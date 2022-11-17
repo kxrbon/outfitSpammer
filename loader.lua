@@ -11,17 +11,12 @@ local inputBox = Instance.new("TextBox")
 local subtitle = Instance.new("TextLabel")
 local beginSpam = Instance.new("TextButton")
 local UICorner_2 = Instance.new("UICorner")
-local subtitle_2 = Instance.new("TextLabel")
-local toggleServerHop = Instance.new("ImageButton")
-local UICorner_3 = Instance.new("UICorner")
-local subtitle_3 = Instance.new("TextLabel")
 
 --Properties:
 
 outfitSpammer.Name = "outfitSpammer"
-outfitSpammer.Parent = game.CoreGui
+outfitSpammer.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 outfitSpammer.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-outfitSpammer.DisplayOrder = 999
 
 mainFrame.Name = "mainFrame"
 mainFrame.Parent = outfitSpammer
@@ -38,7 +33,7 @@ title.Parent = mainFrame
 title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 title.BackgroundTransparency = 1.000
 title.Position = UDim2.new(0.374959767, 0, 0.0161812641, 0)
-title.Size = UDim2.new(0.24844721, 0, 0.115473442, 0)
+title.Size = UDim2.new(0.248447224, 0, 0.115473442, 0)
 title.Font = Enum.Font.Unknown
 title.Text = "Outfit Spammer"
 title.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -51,7 +46,7 @@ inputBox.Parent = mainFrame
 inputBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 inputBox.BackgroundTransparency = 1.000
 inputBox.Position = UDim2.new(0.0310397167, 0, 0.298911899, 0)
-inputBox.Size = UDim2.new(0, 240, 0, 30)
+inputBox.Size = UDim2.new(0.297981262, 0, 0.0693482757, 0)
 inputBox.Font = Enum.Font.Unknown
 inputBox.PlaceholderColor3 = Color3.fromRGB(200, 200, 200)
 inputBox.PlaceholderText = "click to enter"
@@ -77,7 +72,7 @@ beginSpam.Name = "beginSpam"
 beginSpam.Parent = mainFrame
 beginSpam.BackgroundColor3 = Color3.fromRGB(0, 255, 128)
 beginSpam.Position = UDim2.new(0.0310397167, 0, 0.859918594, 0)
-beginSpam.Size = UDim2.new(0, 756, 0, 42)
+beginSpam.Size = UDim2.new(0.938641012, 0, 0.0970875844, 0)
 beginSpam.Font = Enum.Font.Unknown
 beginSpam.Text = "Begin Spam"
 beginSpam.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -87,61 +82,16 @@ beginSpam.TextWrapped = true
 UICorner_2.CornerRadius = UDim.new(0.159999996, 0)
 UICorner_2.Parent = beginSpam
 
-subtitle_2.Name = "subtitle"
-subtitle_2.Parent = mainFrame
-subtitle_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-subtitle_2.BackgroundTransparency = 1.000
-subtitle_2.Position = UDim2.new(0.0310397167, 0, 0.767454207, 0)
-subtitle_2.Size = UDim2.new(0.128577322, 0, 0.0659208596, 0)
-subtitle_2.Font = Enum.Font.Unknown
-subtitle_2.Text = "Server Hop:"
-subtitle_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-subtitle_2.TextSize = 22.000
-subtitle_2.TextWrapped = true
-subtitle_2.TextXAlignment = Enum.TextXAlignment.Left
-
-toggleServerHop.Name = "toggleServerHop"
-toggleServerHop.Parent = mainFrame
-toggleServerHop.BackgroundColor3 = Color3.fromRGB(255, 6, 52)
-toggleServerHop.Position = UDim2.new(0.159999996, 0, 0.778999984, 0)
-toggleServerHop.Size = UDim2.new(0, 21, 0, 21)
-toggleServerHop.Image = "http://www.roblox.com/asset/?id=11589627050"
-
-UICorner_3.CornerRadius = UDim.new(0, 5)
-UICorner_3.Parent = toggleServerHop
-
-subtitle_3.Name = "subtitle"
-subtitle_3.Parent = mainFrame
-subtitle_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-subtitle_3.BackgroundTransparency = 1.000
-subtitle_3.Position = UDim2.new(0.212311655, 0, 0.769765854, 0)
-subtitle_3.Size = UDim2.new(0.507939041, 0, 0.0659208596, 0)
-subtitle_3.Font = Enum.Font.Unknown
-subtitle_3.Text = "rejoin game to end server hopping"
-subtitle_3.TextColor3 = Color3.fromRGB(255, 255, 255)
-subtitle_3.TextSize = 22.000
-subtitle_3.TextWrapped = true
-subtitle_3.TextXAlignment = Enum.TextXAlignment.Left
-
 -- Scripts:
 
-local function XQMTN_fake_script() -- outfitSpammer.handler 
+local function SGNCA_fake_script() -- outfitSpammer.handler 
 	local script = Instance.new('LocalScript', outfitSpammer)
 
 	local mainFrame = script.Parent.mainFrame
 	local beginSpamButton = mainFrame.beginSpam
-	local teleportAfterButton = mainFrame.toggleServerHop
-	
-	local teleportAfter = true
-	
-	teleportAfterButton.MouseButton1Click:Connect(function()
-		if teleportAfter == false then
-			teleportAfterButton.BackgroundColor3 = Color3.fromRGB(0, 255, 128)
-			teleportAfter = true
-		end
-	end)
 	
 	beginSpamButton.MouseButton1Click:Connect(function()
+		beginSpamButton.Text = "Teleporting In 10 Seconds"
 		local finalID
 		local success, fail = pcall(function()
 			local text = mainFrame.inputBox.Text
@@ -149,24 +99,25 @@ local function XQMTN_fake_script() -- outfitSpammer.handler
 		end)
 	
 		if fail then
+			finalID = mainFrame.inputBox.Text
 			mainFrame.inputBox.Text = "invalid userID / player name"
 			mainFrame.inputBox.TextColor3 = Color3.fromRGB(255, 6, 52)
 			wait(2)
 			mainFrame.inputBox.TextColor3 = Color3.fromRGB(255, 255, 255)
 			mainFrame.inputBox.Text = ""
-            finalID = mainFrame.inputBox.Text
 		end
 		
-		while true do
-			if teleportAfter then
-				local arg = finalID
-				local Event = game:GetService("ReplicatedStorage")["⠀⠀⠀⠀😃_outfit_⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"]
-				Event:FireServer(arg)
-				task.wait(0.5)
-                syn.queue_on_teleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/kxrbon/outfitSpammer/main/loader.lua', true))()")
-				game:GetService("TeleportService"):Teleport(4984400432, game.Players.LocalPlayer)
-			end
+		local count = 0
+		
+		while count < 20 do
+			local arg = finalID
+			local Event = game:GetService("ReplicatedStorage")["⠀⠀⠀⠀😃_outfit_⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"]
+			Event:FireServer(arg)
+			wait(0.1)
+			count += 1
 		end
+		
+		game:GetService("TeleportService"):Teleport(4984400432, game.Players.LocalPlayer)
 	end)
 end
-coroutine.wrap(XQMTN_fake_script)()
+coroutine.wrap(SGNCA_fake_script)()
