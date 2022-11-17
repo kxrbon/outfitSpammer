@@ -8,7 +8,7 @@ local beginSpam = Instance.new("TextButton")
 local UICorner_2 = Instance.new("UICorner")
 
 outfitSpammer.Name = "outfitSpammer"
-outfitSpammer.Parent = game.StarterGui
+outfitSpammer.Parent = game.CoreGui
 outfitSpammer.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 outfitSpammer.DisplayOrder = 999
 
