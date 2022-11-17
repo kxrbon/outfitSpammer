@@ -7,6 +7,8 @@ local subtitle = Instance.new("TextLabel")
 local beginSpam = Instance.new("TextButton")
 local UICorner_2 = Instance.new("UICorner")
 
+print("Helo World!")
+
 outfitSpammer.Name = "outfitSpammer"
 outfitSpammer.Parent = game.CoreGui
 outfitSpammer.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
