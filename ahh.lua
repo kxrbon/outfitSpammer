@@ -34,8 +34,8 @@ title.TextColor3 = Color3.fromRGB(255, 255, 255)
 title.TextScaled = true
 title.TextSize = 14.000
 title.TextWrapped = true
-title.FontFace = "Nunito"
-title.FontFace.Style = Enum.FontStyle.Bold
+title.FontFace = Enum.Font.Nunito
+title.FontFace.Style = "Bold"
 
 inputBox.Name = "inputBox"
 inputBox.Parent = mainFrame
@@ -50,8 +50,8 @@ inputBox.Text = ""
 inputBox.TextColor3 = Color3.fromRGB(255, 255, 255)
 inputBox.TextSize = 20.000
 inputBox.TextXAlignment = Enum.TextXAlignment.Left
-inputBox.FontFace = "Nunito"
-inputBox.FontFace.Style = Enum.FontStyle.Bold
+inputBox.FontFace = Enum.Font.Nunito
+inputBox.FontFace.Style = "Bold"
 
 subtitle.Name = "subtitle"
 subtitle.Parent = mainFrame
@@ -65,8 +65,8 @@ subtitle.TextColor3 = Color3.fromRGB(255, 255, 255)
 subtitle.TextSize = 22.000
 subtitle.TextWrapped = true
 subtitle.TextXAlignment = Enum.TextXAlignment.Left
-subtitle.FontFace = "Nunito"
-subtitle.FontFace.Style = Enum.FontStyle.Bold
+subtitle.FontFace = Enum.Font.Nunito
+subtitle.FontFace.Style = "Bold"
 
 beginSpam.Name = "beginSpam"
 beginSpam.Parent = mainFrame
@@ -78,8 +78,8 @@ beginSpam.Text = "Begin Spam"
 beginSpam.TextColor3 = Color3.fromRGB(255, 255, 255)
 beginSpam.TextSize = 30.000
 beginSpam.TextWrapped = true
-beginSpam.FontFace = "Nunito"
-beginSpam.FontFace.Style = Enum.FontStyle.Bold
+beginSpam.FontFace = Enum.Font.Nunito
+beginSpam.FontFace.Style = "Bold"
 
 UICorner_2.CornerRadius = UDim.new(0.159999996, 0)
 UICorner_2.Parent = beginSpam
