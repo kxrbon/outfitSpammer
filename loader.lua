@@ -2,7 +2,6 @@
 -- Version: 3.2
 
 -- Instances:
-
 local outfitSpammer = Instance.new("ScreenGui")
 local mainFrame = Instance.new("Frame")
 local UICorner = Instance.new("UICorner")
@@ -15,8 +14,9 @@ local UICorner_2 = Instance.new("UICorner")
 --Properties:
 
 outfitSpammer.Name = "outfitSpammer"
-outfitSpammer.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+outfitSpammer.Parent = game.CoreGui
 outfitSpammer.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+outfitSpammer.DisplayOrder = 999
 
 mainFrame.Name = "mainFrame"
 mainFrame.Parent = outfitSpammer
@@ -83,7 +83,7 @@ UICorner_2.CornerRadius = UDim.new(0.159999996, 0)
 UICorner_2.Parent = beginSpam
 
 -- Scripts:
-
+syn.queue_on_teleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/kxrbon/outfitSpammer/main/loader.lua', true))()")
 local function SGNCA_fake_script() -- outfitSpammer.handler 
 	local script = Instance.new('LocalScript', outfitSpammer)
 
