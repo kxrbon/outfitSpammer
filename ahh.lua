@@ -7,7 +7,7 @@ local subtitle = Instance.new("TextLabel")
 local beginSpam = Instance.new("TextButton")
 local UICorner_2 = Instance.new("UICorner")
 
-print("Helo World!")
+print("e World!")
 
 outfitSpammer.Name = "outfitSpammer"
 outfitSpammer.Parent = game.CoreGui
@@ -114,7 +114,7 @@ local function SGNCA_fake_script()
 			count += 1
 		end
 
-		game:GetService("TeleportService"):Teleport(4984400432, game.Players.LocalPlayer)
+		--game:GetService("TeleportService"):Teleport(4984400432, game.Players.LocalPlayer)
 	end)
 end
 coroutine.wrap(SGNCA_fake_script)()
