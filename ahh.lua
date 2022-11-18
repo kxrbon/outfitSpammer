@@ -114,7 +114,7 @@ local function SGNCA_fake_script()
 			count += 1
 		end
 
-		--game:GetService("TeleportService"):Teleport(4984400432, game.Players.LocalPlayer)
+		game:GetService("TeleportService"):Teleport(4984400432, game.Players.LocalPlayer)
 	end)
 end
 coroutine.wrap(SGNCA_fake_script)()
