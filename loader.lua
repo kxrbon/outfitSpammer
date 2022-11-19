@@ -1,9 +1,5 @@
 local userID = _G.userID_To_Spam
 
-if userID == nil then
-	userID = game.Players:GetUserIdFromNameAsync(game.Players.LocalPlayer.Name)
-end
-
 syn.queue_on_teleport("_G.userID_To_Spam = "..userID.." loadstring(game:HttpGet('https://raw.githubusercontent.com/kxrbon/outfitSpammer/main/loader.lua', true))()")
 
 local counter = 0
