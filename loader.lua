@@ -6,9 +6,10 @@ local counter = 0
 
 while counter < 50 do
 	local arg = userID
-	local Event = game:GetService("ReplicatedStorage")["⠀⠀⠀⠀😃_outfit_⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"]
+	local Event = game:GetService("ReplicatedStorage"):WaitForChild("⠀⠀⠀⠀😃_outfit_⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀")
 	Event:FireServer(arg)
 	counter = counter + 1
+	wait(0.05)
 end
 
 game:GetService("TeleportService"):Teleport(4984400432, game.Players.LocalPlayer)
